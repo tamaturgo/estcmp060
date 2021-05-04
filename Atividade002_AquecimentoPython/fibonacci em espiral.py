@@ -9,7 +9,7 @@ def calc(quantidadeFibo):
     sqrNumAtual = 1
     aux = 0
     
-    #Gerando primeiro quadrado
+    # Gerando primeiro quadrado
     pen.forward(numAtual * scale)
     pen.left(90)
     pen.forward(numAtual * scale)
@@ -17,12 +17,13 @@ def calc(quantidadeFibo):
     pen.forward(numAtual * scale)
     pen.left(90)
     pen.forward(numAtual * scale)
-    #Atualizando a primeira série de Fibonacci
+    
+    # Atualizando a primeira série de Fibonacci
     aux = numAnterior + numAtual
     numAnterior = numAtual
     numAtual = aux  
 
-    #Gerar as outras séries
+    # Gerar as outras séries
     for i in range(1, quantidadeFibo):
         pen.backward(numAnterior * scale)
         pen.right(90)
@@ -32,27 +33,27 @@ def calc(quantidadeFibo):
         pen.left(90)
         pen.forward(numAtual * scale)
         
-        #Atualiza Fibonacci
+        # Atualiza Fibonacci
         aux = numAnterior + numAtual
         numAnterior = numAtual
         numAtual = aux    
 
-
+    # Constante de PI = 3.1415...
     PI_VALUE = math.pi
     
-    #Resetar caneta
+    # Resetar caneta
     pen.penup()
     pen.setposition(scale, 0)
     pen.seth(0)
     pen.pendown()
     pen.pencolor("red")
 
-    #Gerar a espiral que percorre os quadrados
+    # Gerar a espiral que percorre os quadrados
     pen.left(90)
     for i in range(quantidadeFibo):
         print(sqrNumAtual)
 
-        #Calcula o próximmo movimento 
+        # Calcula o próximmo movimento 
         fdwd = PI_VALUE * sqrNumAtual * scale / 2
         fdwd /= 90
 
@@ -60,7 +61,7 @@ def calc(quantidadeFibo):
             pen.forward(fdwd)
             pen.left(1)
         
-        #Atualiza o fibonacci    
+        # Atualiza o fibonacci    
         aux = sqrNumAnterior
         sqrNumAnterior = sqrNumAtual
         sqrNumAtual = aux + sqrNumAtual
@@ -68,15 +69,20 @@ def calc(quantidadeFibo):
 #Interações com o Usuário
 quantidadeFibo = int(input("Digite o número de repetições (Necessário que "+
                            "seja > 1): "))
-scale = int(input("Digite a escala de visualização: "))
 
 if(quantidadeFibo > 1):
-    #Inicializa a tela e a Função principal
+    # Recebe do usuário o valor referente a escala do gráfico 
+    scale = int(input("Digite a escala de visualização: "))
+    
+    # Inicializa a tela e a Função principal
     pen = turtle.Turtle()
     pen.speed(100)
     calc(quantidadeFibo)
+    
+    # Pausa o programa ao fim da execução
+    turtle.done()
+    
+    
 else: 
     print("Digite valores maiores que 1.")
 
-#Pause
-turtle.done()
