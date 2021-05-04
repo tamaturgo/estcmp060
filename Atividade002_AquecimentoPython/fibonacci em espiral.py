@@ -70,10 +70,13 @@ quantidadeFibo = int(input("Digite o número de repetições (Necessário que "+
                            "seja > 1): "))
 scale = int(input("Digite a escala de visualização: "))
 
-#Inicializa a tela e a Função principal
-pen = turtle.Turtle()
-pen.speed(100)
-calc(quantidadeFibo)
+if(quantidadeFibo > 1):
+    #Inicializa a tela e a Função principal
+    pen = turtle.Turtle()
+    pen.speed(100)
+    calc(quantidadeFibo)
+else: 
+    print("Digite valores maiores que 1.")
 
 #Pause
 turtle.done()
