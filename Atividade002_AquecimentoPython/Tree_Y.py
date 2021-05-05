@@ -9,11 +9,11 @@ def treeY(tamanho, level):
         # Selecionando a cor verde para o ultimo level
         caneta.pencolor(0, 255//level, 0)
 
-        #desenhando a base
+        # Desenhando a base
         caneta.forward(tamanho)
         caneta.right(angulo)
 
-        # Criando ramificações da arvore
+        # Criando ramificações da árvore
         treeY(0.8 * tamanho, level-1)
         caneta.pencolor(0, 255//level, 0)
 
