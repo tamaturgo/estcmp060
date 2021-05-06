@@ -66,7 +66,7 @@ def calc(quantidadeFibo):
         sqrNumAnterior = sqrNumAtual
         sqrNumAtual = aux + sqrNumAtual
         
-#Interações com o Usuário
+# Interações com o Usuário
 quantidadeFibo = int(input("Digite o número de repetições (Necessário que "+
                            "seja > 1): "))
 
