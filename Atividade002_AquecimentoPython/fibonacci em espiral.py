@@ -85,4 +85,3 @@ if(quantidadeFibo > 1):
     
 else: 
     print("Digite valores maiores que 1.")
-
